@@ -3,8 +3,8 @@
 var mongo;
 var url = require('url');
 const DB_HOST = process.env.MONGODB_HOSTNAME || 'localhost';
-const DB_USER = process.env.MONGODB_USERNAME || 'root';
-const DB_PASS = process.env.MONGODB_PASSWORD || '';
+const DB_USER = process.env.MONGODB_USERNAME || 'admin';
+const DB_PASS = process.env.MONGODB_PASSWORD || 'hacku';
 const DB_NAME = process.env.MONGODB_DATABASE || 'hatasa';
 const MONGO_URL = 'mongodb://' + DB_HOST + ':27017/' + DB_NAME;
 
