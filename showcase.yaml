@@ -1,0 +1,13 @@
+type: "runtime"
+
+image: "runtime/node"
+
+entrypoint: "npm start"
+
+startup: "npm install"
+
+internal: "soft"
+
+use_mongodb: true
+
+http_proxy: 80
