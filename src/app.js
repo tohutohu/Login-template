@@ -5,13 +5,13 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-const index = require('./routes/index');
-const users = require('./routes/users');
+const index = require('../routes/index');
+const users = require('../routes/users');
 
 const app = express();
 
 const mongoExpress = require('mongo-express/lib/middleware');
-const mongoExpressConfig = require('./MongoConfig.js');
+const mongoExpressConfig = require('../MongoConfig.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
