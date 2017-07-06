@@ -23,8 +23,8 @@ const init = async () => {
   app.use(passport.session());
 
   passport.use(new TwitterStrategy({
-    consumerKey: 'hM9Bze0KplHvG3BvejEBf6BNX',
-    consumerSecret: '3SrptWCbTQFx8968Kc1fJhmWZb9f9tJPRshxsSxMjYbwgP6irG',
+    consumerKey: '739379223303880704-qga8MIVgUw6XZKjGIXHYsO4hx9DRtF5',
+    consumerSecret: 'lOGhteBBsguaKM051RWAmZNH3s7qMb8RTPwwVvn6uYoG3',
     callbackURL: (process.env.SERVER ? 'https://hatasa-server.ichigojam.trap.show' : 'http://localhost:3000' )+ '/auth/twitter/callback'
   },
 

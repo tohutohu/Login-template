@@ -6,9 +6,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const account = require('./Account')
 
+const MongoManager = require('./MongoManager');
+const Session = require('express-session');
+const MongoStore = require('connect-mongo')(Session);
+
 const index = require('../routes/index');
 const users = require('../routes/users');
-
 const app = express();
 
 const mongoExpress = require('mongo-express/lib/middleware');
@@ -21,6 +24,16 @@ const init = async () => {
   // view engine setup
   //app.set('views', path.resolve(__dirname, './../views'));
   app.set('view engine', 'ejs');
+
+  //セッションの設定
+  const db = await MongoManager.getDb();
+  const  sessionStore = new MongoStore({db});
+  app.use(Session({
+    secret: 'cocoro',
+    rollong: true,
+    store: sessionStore
+    })
+  );
 
   // uncomment after placing your favicon in /public
   //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
