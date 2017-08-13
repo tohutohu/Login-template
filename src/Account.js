@@ -23,8 +23,8 @@ const init = async () => {
   app.use(passport.session());
 
   passport.use(new TwitterStrategy({
-    consumerKey: '739379223303880704-qga8MIVgUw6XZKjGIXHYsO4hx9DRtF5',
-    consumerSecret: 'lOGhteBBsguaKM051RWAmZNH3s7qMb8RTPwwVvn6uYoG3',
+    consumerKey: 'whAdQ0eWMzQ3ZH9qUO1umkm7Q',
+    consumerSecret: 'TBNILwBmKdatfFXji999jGxhm0yPvNSB4LLDRjK15ajovZf0cE',
     callbackURL: (process.env.SERVER ? 'https://hatasa-server.ichigojam.trap.show' : 'http://localhost:3000' )+ '/auth/twitter/callback'
   },
 
@@ -54,7 +54,7 @@ const init = async () => {
   });
 
   app.get('/auth/twitter', passport.authenticate('twitter'));
-  app.get('/auth/twitter/callback', passport.authenticate('twitter', {successRedirect: 'https://gachaking.trap.games', failureRedirect: 'https://gachaking.trap.games'}));
+  app.get('/auth/twitter/callback', passport.authenticate('twitter', {successRedirect: '/', failureRedirect: '/'}));
 
   app.get('/logout', (req, res, next) => {
     req.logout();
